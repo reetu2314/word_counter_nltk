@@ -1,5 +1,8 @@
 from flask import Flask, render_template , request 
 import nltk
+nltk.download('wordnet')
+#download model
+nltk.download('punkt')
 from nltk.stem import WordNetLemmatizer
 from nltk import FreqDist
 from nltk.corpus import stopwords
