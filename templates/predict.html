@@ -1,0 +1,67 @@
+<html>
+    <head>
+        <style>
+            table, th, td {
+                            border: 1px solid black;
+                            }
+            th, td {
+                    padding: 15px;
+                    vertical-align: top;
+                    }
+            .table{margin-left: auto;
+                    margin-right: auto;}
+            .heading{text-align: center;}
+        </style>
+    </head>
+    <title>Word Count Results</title>
+    
+    <body>
+        <div class="Word_counts">
+            <div class="words">
+               <br> <h1 class = "heading">Word Count Results</h1><br>
+                <table class="table">
+                       <tr>
+                            <th>Number Of Sentences</th>
+                            <th>Number Of Words</th>
+                            <th>Number Of Punctutaions Used</th>
+                            <th>Common Words Used</th>
+                            <th>Word Freuqency</th>
+                       </tr>
+                       <tr>
+                        <td>
+                            {{sentences|length}}
+                        </td>
+                        <td>
+                            {{words|length}}
+                        </td>
+                        <td>
+                            {{punct_count|length}}
+                        </td>
+                        <td>
+                            <ol>
+                                <!-- For loop logic of jinja template -->
+                                {%for i in common_words%}
+                                    <li>{{i}}</li>
+                                {%endfor%}
+                                  
+                            </ol>
+                        </td>
+                        <td>
+                            <ol>
+                                <!-- For loop logic of jinja template -->
+                                {%for i in freq_dict%}
+                                    <li>{{i}} - {{freq_dict[i]}} times</li>
+                                {%endfor%}
+                                  
+                            </ol>
+                        </td>
+                        
+                       </tr> 
+                        
+                </table>
+                
+            </div>
+        </div>
+                
+    </body>
+</html>
